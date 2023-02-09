@@ -1,9 +1,10 @@
+// wniosek musze queryselectorem wszystkie divy i potem je
 const grid = document.querySelector('#grid');
-
+//let list_of_divs = document.getElementById("myDIV").querySelectorAll("p"); 
 function setupGrid (size) {
     for (let i = 0; i < size; i++) {
         const gridRow = document.createElement('div')
-        gridRow.classList.add('grid-row')
+        gridRow.setAttribute('id','grid-row');
         for (let i = 0; i < size; i++) {
             const gridElement = document.createElement('div')
             gridElement.classList.add('grid-element')
@@ -17,11 +18,30 @@ function setupGrid (size) {
         //gridElement.addEventListener('mousedown', changeColor)
     }
 }
-
+//console.log(document.getElementById("myDIV").querySelectorAll("p"));
 setupGrid(8);
-/*const para = document.createElement("p");
-const node = document.createTextNode("This is new.");
-para.appendChild(node);
+let  row = grid.querySelectorAll("div");
+//row.addEventListener('mouseover', function () =>  { row.style.backgroundColor = "red";
+//});
+console.log(row);
+/*
 
-const element = document.getElementById("div1");
-element.appendChild(para); */
+
+var x = document.getElementById("myDIV").querySelectorAll("p"); 
+
+// Set the background color of the first <p> element (index 0) in div
+x[0].style.backgroundColor = "red";
+
+const box = document.getElementById('box');
+
+// 👇️ Change text color on mouseover
+box.addEventListener('mouseover', function handleMouseOver() {
+  box.style.color = 'red';
+});
+
+// 👇️ Change text color back on mouseout
+box.addEventListener('mouseout', function handleMouseOut() {
+  box.style.color = 'black';
+});
+
+*/
