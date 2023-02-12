@@ -5,19 +5,94 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="">
 <style>
-    #grid-row {
+    body {
+        color: #201E20;
         display: flex;
-        border: 10px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #DDC3A5;
+    }
+    #grid {
+        margin: 0px 20px 0px 0px;
     }
     .grid-element {
         border-width: 2px;
-        border-color: black;
+        border-color: #201E20;
         border-style: dashed;
     }
+    #container {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    #tools {
+        display: flex;
+        padding: 0px 40px 0px 0px;
+        height: 200px;
+        width: 100px;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    #size {
+        height: 50px;
+        width: 70px;
+        background-color: #DDC3A5;
+        border: none;
+    } 
+    button {
+        padding: 0;
+        border: none;
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    button:focus {
+        outline: 0;
+    }
+    button {
+    height: 50px;
+    width: 50px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+        0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    }
+    button {
+        background-color: #E0A96D;
+        border-radius: 25px;
+        flex: auto;
+    } 
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
 </style>
-<script src="elo.js" defer></script>
+<script src="elo1.js" defer></script>
 <body>
-    <div id="grid">
+    <h1>Fetch-a-Sketch</h1>
+    <div id="container">
+        <div id="select">
+            <label for="size">Grid size:</label>
+            <select id="size">
+                <option value="8">default</option>
+                <option value="4">small</option>
+                <option value="10">medium</option>
+                <option value="16">large</option>
+                <option value="120">huge</option>
+            </select>
+        </div>
+        <div id="grid">
+        </div> 
+        <div id="tools">
+            <div class="buttons">
+                <button id="btn_normal">normal</button>
+                <button id="btn_rgb">rgb</button>
+                <button id="btn_rubber">rubber</button>
+                <button id="btn_clean">clean out</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>

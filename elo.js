@@ -2,28 +2,26 @@
 const grid = document.querySelector('#grid');
 //let list_of_divs = document.getElementById("myDIV").querySelectorAll("p"); 
 function setupGrid (size) {
-    for (let i = 0; i < size; i++) {
-        const gridRow = document.createElement('div')
-        gridRow.setAttribute('id','grid-row');
-        for (let i = 0; i < size; i++) {
-            const gridElement = document.createElement('div')
-            gridElement.classList.add('grid-element')
-            gridElement.style.height = "50px";
-            gridElement.style.width = "50px";
-            gridElement.style.backgroundColor = "red";
-            gridRow.appendChild(gridElement);
-        }
-        grid.appendChild(gridRow);
-        //gridElement.addEventListener('mouseover', changeColor)
-        //gridElement.addEventListener('mousedown', changeColor)
+    for (let i = 0; i < size*size; i++) {
+      const gridElement = document.createElement('div')
+      gridElement.classList.add('grid-element')
+      gridElement.style.height = "50px";
+      gridElement.style.width = "50px";
+      gridElement.style.backgroundColor = "red";
+      grid.appendChild(gridElement);
     }
 }
-//console.log(document.getElementById("myDIV").querySelectorAll("p"));
 setupGrid(8);
-let  row = grid.querySelectorAll("div");
-//row.addEventListener('mouseover', function () =>  { row.style.backgroundColor = "red";
-//});
-console.log(row);
+
+
+const gridElements = document.querySelectorAll('.grid-element');
+gridElements.forEach((element) => {
+  element.addEventListener('mouseover', function handleMouseOver() {
+  element.style.backgroundColor = "black";
+  });
+});
+
+
 /*
 
 
