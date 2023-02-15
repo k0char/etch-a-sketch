@@ -8,18 +8,22 @@ const btn_cleanEverything = document.querySelector('#btn_clean');
 const btn_test = document.querySelector('#test');
 //let list_of_divs = document.getElementById("myDIV").querySelectorAll("p"); 
 function setupGrid (size) {
+    //let displaySquare = Math.sqrt(23040);
+    let displaySquare = Math.sqrt(138240*3);
+    let sizepx = displaySquare/size
+    console.log(sizepx)
     for (let i = 0; i < size; i++) {
         const gridRow = document.createElement('div')
         gridRow.setAttribute('id','grid-row');
         gridRow.style.display = "flex";
-        gridRow.style.border = "10px";
+        gridRow.style.border = "1px";
         gridRow.style.justifyContent = "center";
 
         for (let i = 0; i < size; i++) {
             const gridElement = document.createElement('div')
             gridElement.classList.add('grid-element')
-            gridElement.style.height = "50px";
-            gridElement.style.width = "50px";
+            gridElement.style.height = sizepx + "px";
+            gridElement.style.width = sizepx + "px";
             gridElement.style.backgroundColor = "#E0A96D";
             gridRow.appendChild(gridElement);
         }
